@@ -26,6 +26,15 @@ You may find helpful these links while solving the quizz:
 
 		+ At column level: The second level of randomness is introduced. Not all the columns are passed into training each of the decision trees, i.e. only want 10% of columns sent to each tree. This means a randomly selected 3 columns will be sent to each tree, the first tree may be getting trained with C1, C2 and C4, the next decision tree may have C4, C7 and C10, so on so forth.
 
+	+  The results from each of decision trees are taken and the final verdict will be lying on the majority voting and averaging in order to predict in case of classification and regression, respectively.
+
+	+ **When to choose Random Forests (RFs) ?** 
+
+		+ **Random Forests don't train well on small data sets**. In this case, Linear regression will easily estimate the solution while RF will fail to do so with a good estimation.
+
+		+ **Interpretability problem with Random Forests**. We can't see or understand the relationship between the response and the independent variables. Random Forest is a predictive tool, not a descriptive one. 
+
+		+ **Time complexity for training in Random Forests**. It may take too long since getting trained multiple decision trees. 
 
 
 
