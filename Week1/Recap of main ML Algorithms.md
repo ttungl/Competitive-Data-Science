@@ -46,8 +46,25 @@
 
 ## kNN
 
+- kNN ~ k-nearest neighbors: 
+	+ Classification problem: Imagine we want to predict the label for the point with question mark in the data. We assume that the points close to each other are likely to have similar labels, so we need to find the closest point which is displayed by arrow and pick its label as an answer. If we find k-nearest objects and It can be k-NN and can select label by majority vote.
 
+	+ Intuition in k-NN is simple, closer objects will likely to have the same labels. For particular example, we use square distance to find the closest object. In general case, it can be meaningless to use such a distance function, for example, square distance over images cannot be able to capture semantic meaning.
+
+	+ Library:
+		+ SKlearn: uses algorithm matrix to speedup recollections and allows you to use several predefined distance functions or your own one.
 
 ## Neural Networks
 
+- NN is a special class of machine learning models. It generates a smooth separating curve in contrast to decision trees.
+
+## Conclusion
+
++ No method can be used for all problems
++ Linear models split space into TWO subspaces
++ Tree-based methods split space into boxes
++ k-NN methods heavily rely on how to measure points "closeness"
++ Feed-forward NNs produce smooth non-linear decision boundary.
+
++ The most powerful methods are Gradient Boosted Decision Trees and Neural Nets, but should also consider others, depending on each problem.
 
