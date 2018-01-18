@@ -78,8 +78,53 @@ You may find helpful these links while solving the quizz:
 
 + kNN
 
-	+
+	+ **When to use kNN algorithms ?**
+
+		+ kNN can be used for both classification and regression predictive problems. kNN is commonly used in **classification problems**.
+
+	+ **How does the kNN work ?**
+
+		+ Choose a class that has a majority voting.
+
+		+ What is the best K ? When K increases, the boundary becomes smoother. When k goes to infinite, the boundary becomes all one kind depending on the total majority. 
+
+		+ Error rate at k=1 always is zero for training sample. This is because the closest point to any training point is itself, so the prediction is always accurate with k=1. Thus, k=1 resulted in overfitting the boundaries. Then, error rate decreases until reaching a minimal. After the minimal point, it then increases with the k increasing. The optimal value of k is the mininal error rate point, and can be used for all predictions.
+
 
 
 ## QuZzz...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
