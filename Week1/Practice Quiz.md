@@ -28,7 +28,7 @@ You may find helpful these links while solving the quizz:
 
 	+  The results from each of decision trees are taken and the final verdict will be lying on the majority voting and averaging in order to predict in case of classification and regression, respectively.
 
-	+ **When to choose Random Forests (RFs) ?** 
+	+ **When NOT to choose Random Forests (RFs) ?** 
 
 		+ **Random Forests don't train well on small data sets**. In this case, Linear regression will easily estimate the solution while RF will fail to do so with a good estimation.
 
@@ -36,16 +36,17 @@ You may find helpful these links while solving the quizz:
 
 		+ **High time complexity for training in Random Forests**. It may take too long since getting trained multiple decision trees. Time complexity could increase exponentially in cases of categorical variables, i.e., a categorical column with n levels, Random Forests will split 2^n-1 points to find the max splitting point. Using H2O to train random forests to speed up the process.
 
-		+ **Range of values**   
+		+ **Range of values** In a regression setting, the range of values is determined by the values already available in the training set, however, Random Forests cannot take values outside of the training data.
 
+	+ **Advantages of using Random Forests**
 
+		+ Since using multiple decision trees, **the bias** remains the same as that of a single decision tree. However, **the variance** decreases, resulting in decreasing the chance of overfitting. [Read more Bias-Variance Curse](http://manishbarnwal.com/blog/2017/02/08/the_curse_of_bias_and_variance/). 
 
-
-
+		+ Don't need any assumptions of the model or linearity in the data set.
 
 + Gradient Boosting
-	
-	+
+		
+	+ 
 
 
 + kNN
