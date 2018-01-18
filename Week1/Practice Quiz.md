@@ -41,12 +41,39 @@ You may find helpful these links while solving the quizz:
 	+ **Advantages of using Random Forests**
 
 		+ Since using multiple decision trees, **the bias** remains the same as that of a single decision tree. However, **the variance** decreases, resulting in decreasing the chance of overfitting. [Read more Bias-Variance Curse](http://manishbarnwal.com/blog/2017/02/08/the_curse_of_bias_and_variance/). 
+			+ Bias is the error that captures the difference of the predicted value from the ground truth value. Bias tends to decrease when the complexity of the model increases. 
+
+			+ When the model complexity increases, variance increases, so the chance of overfitting increases. Coming to random forests and linear regression example, random forest's variance is expected to be higher than that of linear regression model.
 
 		+ Don't need any assumptions of the model or linearity in the data set.
 
-+ Gradient Boosting
++ Gradient Boosting (GB)
 		
-	+ 
+	+ **How the gradient boosting algorithm works ?**
+
+		+ Let's revisit how a decision tree works. A decision tree is a simple **classifier which splits the space of features into regions by applying trivial splitting** (e.g. x2 < 2.4). The output regions have a rectangular form, where the predictions are constant in each region.
+
+		+ **Gradient Boosting relies on regression trees** (even when solving a classification problem) **which minimize mean squared error (MSE)**. Selecting a prediction for a leaf region is simple: to minimize MSE, we should select an average target value over samples in the leaf. **The tree is built starting from the root: for each leaf, a split is selected to minimize MSE** for this step. This process produces suboptimal results, so building an optimal tree may turn to be a NP-Complete problem.
+
+		+ Gradient Boosting is able to provide smooth detailed predictions by combining many trees of very limited depth.
+
+
+	+ **What is gradient boosting ?**
+
+		+ Gradient boosting is an ensembling technique, in which the prediction is done by an ensemble of simpler estimators. In practice, we use Gradient Boosting over Decision Trees (GBDT). In theory, any estimators can be used instead of decision trees.
+
+		+ The aim of GB is to create/train an ensemble of trees. **Boosting** indicates an ensemble to work much better than a single estimator (i.e. a decision tree).
+
+		+ How an ensemble is built ?
+
+			+ Gradient Boosting builds an ensemble of trees **one-by-one**, then predictions of each trees are summed.
+
+				D(x) = dt1(x) + dt2(x) + .. + dtn(x)
+
+			+ Next decision tree tries to cover the discrepancy between the target function f(x) and current ensemble prediction by **reconstructing the residual**. For example, if an ensemble has 3 trees, the predictions of that ensemble is: D(x) = dt1(x) + dt2(x) + dt3(x). 
+
+			+ The next tree should complement well to the existing trees and minimize the training error of the ensemble. D(x) + dt4(x) = f(x). To reconstruct the residual which is the difference between the target function and the current predictions of an ensemble. R(x) = f(x) - D(x).
+			If decision tree completely reconstructs R(x), the whole ensemble gives predictions without errors.
 
 
 + kNN
