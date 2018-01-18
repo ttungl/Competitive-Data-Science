@@ -76,7 +76,7 @@ You may find helpful these links while solving the quizz:
 			If decision tree completely reconstructs R(x), the whole ensemble gives predictions without errors.
 
 
-+ kNN
++ **kNN ~ k-nearest neighbors**
 
 	+ **When to use kNN algorithms ?**
 
