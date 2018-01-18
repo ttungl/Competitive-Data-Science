@@ -38,7 +38,7 @@
 	+ [XGBoost repository](https://github.com/dmlc/xgboost)
 	+ [LightGBM repository](https://github.com/Microsoft/LightGBM)
 	+ [Interactive demo of simple feed-forward Neural Net](http://playground.tensorflow.org/)
-	+ Frameworks for Neural Nets: Keras,PyTorch,TensorFlow,MXNet, Lasagne
+	+ Frameworks for Neural Nets: Keras, PyTorch, TensorFlow, MXNet, Lasagne
 	+ [Example from sklearn with different decision surfaces](http://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html)
 	+ [Arbitrary order factorization machines](https://github.com/geffy/tffm)
 
