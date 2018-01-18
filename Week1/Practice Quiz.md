@@ -34,7 +34,11 @@ You may find helpful these links while solving the quizz:
 
 		+ **Interpretability problem with Random Forests**. We can't see or understand the relationship between the response and the independent variables. Random Forest is a predictive tool, not a descriptive one. 
 
-		+ **Time complexity for training in Random Forests**. It may take too long since getting trained multiple decision trees. 
+		+ **High time complexity for training in Random Forests**. It may take too long since getting trained multiple decision trees. Time complexity could increase exponentially in cases of categorical variables, i.e., a categorical column with n levels, Random Forests will split 2^n-1 points to find the max splitting point. Using H2O to train random forests to speed up the process.
+
+		+ **Range of values**   
+
+
 
 
 
