@@ -47,6 +47,11 @@ You may find helpful these links while solving the quizz:
 
 		+ Don't need any assumptions of the model or linearity in the data set.
 
+	+ **Difference of Random Forests and ExtraTrees**
+
+		+ Extra-trees differ from classic decision trees in the way they are built. When looking for the best split to separate the samples of a node into two groups, random splits are drawn for each of max features that are randomly selected and the best split among those is chosen. When max feature is set 1, a random decision tree is built.
+
+
 + Gradient Boosting (GB)
 		
 	+ **How the gradient boosting algorithm works ?**

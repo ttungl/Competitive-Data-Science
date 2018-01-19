@@ -68,3 +68,7 @@
 
 + The most powerful methods are Gradient Boosted Decision Trees and Neural Nets, but should also consider others, depending on each problem.
 
+## Extra resources:
++ [Link 1](https://www.zybuluo.com/marcello/note/947495), [Link 2](https://www.zybuluo.com/marcello/note/950001), [Link 3](https://www.zybuluo.com/marcello/note/955646), [Link 4](https://www.zybuluo.com/marcello/note/964704), [extra](https://github.com/MarcelloSloan/How-to-win-a-data-science-competition-Coursera/blob/master/Programming_assignment_week_1_PandasBasics1114.ipynb).
+
++ [Reference 1](https://github.com/hse-aml/competitive-data-science)
