@@ -110,20 +110,55 @@
 
 ---
 
-## Feature generation
+## Feature generation (for numeric features)
+Creating new features using knowledge about the features and the tasks. It helps us by making model training more simple and effective. Sometime, these features can be engineered using prior knowledge and logic, sometime, we have to dig into the data, create and check hypothesis, then use this inferred knowledge and intuition to derive new features.
+
++ **Ways to proceed**: 
+	
+	+ Prior knowledge: it turns out an ability to dig into the data, and derive the insights, this differentiates a **good competitor** and a **great one**.
+
+	+ Exploratory Data Analysis (EDA)
 
 
+	1. Example 1: Data of Real Estate with 2 columns, Price and Area. Squared area of 55 m^2, price $107k, price 1m^2=107k / 55 m^2. We can add more feature, like price per meter square. In this case, it's quite reasonable.
 
+	2. Example 2: combined = (horizontal**2 + vertical**2)**0.5 
 
+			  point <-combined-> water source 
+				|					|
+			vertical				|
+				|					|
+				-----Horizontal------
 
+	3. Note: although Gradient Boosting DT is powerful, it still experiences some difficulties with approximation of multiplications and divisions. Adding size features explicitly can result in a more robust model with less amount of trees.
 
+	4. If we have price of products as a feature, we **can add new feature indicating fractional part of these prices**. For example, if some product costs 2.49, the fractional part of its price is 0.49. This feature can help the model utilizing the differences in the perception of the people in terms of these prices. We also can find the similar patterns in tasks which require distinguishing between a human and a bot. For instance, if we have some kind of financial data like auctions, we could observe that the people tend to set round numbers as prices, or we are trying to find spambots on social networks, we can be sure that no human ever read messages with an exact interval of one second. 
 
+	5. These show that creativity and data understanding are the keys to productive feature generation.
 
+---
 
+## Conclusion
 
+	1. Numeric feature preprocessing is different for tree and non-tree based models.
 
+		a. Tree-based models do not depend on scaling.
 
+		b. Non-tree based models significantly depend on scaling.
 
+	2. Most often used preprocessing are:
 
+		a. MinMaxScaler - to [0, 1]
 
+		b. StandardScaler - to mean==0, std==1
+
+		c. Rank - sets spaces between sorted values to be equal
+
+		d. np.log(1+x) and np.sqrt(1+x)
+
+	3. Feature generation is powered by:
+
+		a. Prior knowledge
+
+		b. Exploratory Data Analysis
 
