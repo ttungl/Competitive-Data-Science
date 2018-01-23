@@ -125,9 +125,9 @@ Creating new features using knowledge about the features and the tasks. It helps
 	2. Example 2: combined = (horizontal**2 + vertical**2)**0.5 
 
 			  point <-combined-> water source 
-				|					|
-			vertical				|
-				|					|
+				|	|
+			vertical	|
+				|	|
 				-----Horizontal------
 
 	3. Note: although Gradient Boosting DT is powerful, it still experiences some difficulties with approximation of multiplications and divisions. Adding size features explicitly can result in a more robust model with less amount of trees.
