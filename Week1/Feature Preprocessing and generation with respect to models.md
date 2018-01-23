@@ -128,7 +128,7 @@ Creating new features using knowledge about the features and the tasks. It helps
 				|		|
 			vertical		|
 				|		|
-				-----Horizontal------
+				-----Horizontal---
 
 	3. Note: although Gradient Boosting DT is powerful, it still experiences some difficulties with approximation of multiplications and divisions. Adding size features explicitly can result in a more robust model with less amount of trees.
 
