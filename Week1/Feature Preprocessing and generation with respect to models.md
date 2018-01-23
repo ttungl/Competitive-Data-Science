@@ -8,9 +8,9 @@
 
 3. Their dependence on a model type
 
-+ Features: numeric, categorical, ordinal, datetime, coordinates.
+	+ Features: numeric, categorical, ordinal, datetime, coordinates.
 
-+ Missing values
+	+ Missing values
 
 ## Titanic dataset
 
