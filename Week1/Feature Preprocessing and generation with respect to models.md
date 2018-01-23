@@ -140,25 +140,25 @@ Creating new features using knowledge about the features and the tasks. It helps
 
 ## Conclusion
 
-	1. Numeric feature preprocessing is different for tree and non-tree based models.
+1. Numeric feature preprocessing is different for tree and non-tree based models.
 
-		a. Tree-based models do not depend on scaling.
+	a. Tree-based models do not depend on scaling.
 
-		b. Non-tree based models significantly depend on scaling.
+	b. Non-tree based models significantly depend on scaling.
 
-	2. Most often used preprocessing are:
+2. Most often used preprocessing are:
 
-		a. MinMaxScaler - to [0, 1]
+	a. MinMaxScaler - to [0, 1]
 
-		b. StandardScaler - to mean==0, std==1
+	b. StandardScaler - to mean==0, std==1
 
-		c. Rank - sets spaces between sorted values to be equal
+	c. Rank - sets spaces between sorted values to be equal
 
-		d. np.log(1+x) and np.sqrt(1+x)
+	d. np.log(1+x) and np.sqrt(1+x)
 
-	3. Feature generation is powered by:
+3. Feature generation is powered by:
 
-		a. Prior knowledge
+	a. Prior knowledge
 
-		b. Exploratory Data Analysis
+	b. Exploratory Data Analysis
 
