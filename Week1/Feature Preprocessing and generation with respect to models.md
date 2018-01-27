@@ -251,16 +251,16 @@ Creating new features using knowledge about the features and the tasks. It helps
 		+ After figuring out how to preprocess categorical features for tree based and non-tree based models, we can look into feature generation.
 
 			Pclass		sex 		Pclass_sex
-			3			male 			3male
-			1 			female 			1female
-			3 			female 			3female
-			1 			female 			1female
+			3		male 		3male
+			1 		female 		1female
+			3 		female 		3female
+			1 		female 		1female
 
 		Pclass_sex
 		1male 	1female 	2male 	2female 	3male 	3female
-											1
+							1
 				1
-												1
+									1
 				1
 
 
