@@ -229,10 +229,10 @@ Creating new features using knowledge about the features and the tasks. It helps
 					One-hot encoding
 
 			Pclass		Pclass==1	Pclass==2	Pclass==3
-			1				1
-			2							1
-			1				1
-			3										1
+			1		1
+			2					1
+			1		1
+			3							1
 
 				pandas.get_dummies
 
@@ -258,9 +258,9 @@ Creating new features using knowledge about the features and the tasks. It helps
 
 		Pclass_sex
 		1male 	1female 	2male 	2female 	3male 	3female
-													1
+											1
 				1
-														1
+												1
 				1
 
 
