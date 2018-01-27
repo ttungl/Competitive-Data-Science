@@ -48,8 +48,11 @@
 
 
 		[code]
+
 			scaler = MinMaxScaler()
+
 			xtrain = scaler.fit_transform(train[['Age'],['SibSp']])
+			
 			pd.DataFrame(xtrain).hist(figsize=(10,4));
 
 
