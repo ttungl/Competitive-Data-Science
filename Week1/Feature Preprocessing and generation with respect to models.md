@@ -1,5 +1,9 @@
 # Feature Preprocessing and generation with respect to models
 
+---
+
+# Numeric features
+
 ## Main topics
 
 1. Feature preprocessing
@@ -164,4 +168,134 @@ Creating new features using knowledge about the features and the tasks. It helps
 	a. Prior knowledge
 
 	b. Exploratory Data Analysis
+
+
+---
+
+
+# Categorical and ordinal features
+
++ Categorical features in Titanic dataset: Pclass (passenger class), Sex, Cabin, Embarked,
+
+	+ Note: In numeric features, we know the difference between classes, however, Pclass is an ordinal feature in which we don't really know which difference is bigger or smaller other classes. As numeric features, we can sort and integrate an ordinal feature and expect to get similar performance. 
+
+	+ For example, **driver's license type** is an ordinal feature, either A, B, C or D; **Education** is also an ordinal feature, either Kindergarden, college, school, undergraduate, bachelor, master, doctoral; **Ticket class**: 1,2,3, etc. These are sorted in increasingly complex order.
+
++ **label encoding**: 
+
+	+ The simplest way to **encode** a categorical feature is to **map its unique value to different numbers**. This procedure is known as **label encoding**. This method works fine with two ways, because **tree methods** can split features and extract most of useful values in categories on its own. **Non-tree based**, on the other hand, can't use this method effectively.
+
+	+ If we want to train linear model kNN or neural nets, we need to treat the categorical feature differently. For example, 
+
+			Pclass		1		2		3
+			target		1		**0**		1
+
+		This is not linear, and linear model will be confused. Here we can use linear model predictions, and they are all around 0.5.
+
+		+ We make two splits selecting in each unique value and reaching it independently. Thus, these entries could achieve much better score using these feature. 
+
+	+ Let's take the categorical feature (Embarked feature) and apply label encoding. 
+
+		+ We can apply encoding in the alphabetical or sorted order. A unique way to solve this feature namely S,C,Q.
+		
+			1. Alphabetical (sorted) 
+
+				[S,C,Q] -> [2,1,3]
+
+					sklearn.preprocessing.LabelEncoder
+
+			2. Order of appearance (this can be right if sorted order is in some useful ways.)
+
+				[S,C,Q] -> [1,2,3]
+
+					Pandas.factorize
+
++ **Frequency Encoding**
+
+	+ [S,C,Q] -> [0.5, 0.3, 0.2]
+
+		encoding = titanic.groupby('Embarked').size()
+		encoding = encoding/len(titanic)
+		titanic['enc'] = titanic.Embarked.map(encoding)
+
+	+ Frequency encoding can be helpful for non-tree based models. If it's correlated to the target value, linear model will utilize this dependency.
+
+	+ If you have multiple categories with the same frequency, they won't be distinguisable in this new feature. We might apply categorization in order to deal with such ties.
+
+		from scipy.stats import rankdata
+
++ We have also seen that linear models can struggle with label encoding:
+
+					One-hot encoding
+
+			Pclass		Pclass==1	Pclass==2	Pclass==3
+			1				1
+			2							1
+			1				1
+			3										1
+
+				pandas.get_dummies
+
+				sklearn.preprocessing.OneHotEncoder
+
+		+ The way to adapt categorical features to non-tree based models is straight-forwarded. We need to make new column for each unique value in the future and put one in the appropriate place, every else will be zeros. This method is called, **one-hot encoding**. 
+
+		+ For the above table, for each unique value of Pclass feature, we create new columns, this works well for linear methods such as kNN or neural nets.
+
+		+ One-hot encoding is scaled because the minimum of this feature is zero, and max is one. 
+
+		+ If we have few important numeric features and hundreds of binary features are used by one-hot encoding, it could become difficult for tree methods to use first one efficiently. In other words, tree methods will slow down, not always improving their results. In addition, it's easy to imply that if categorical feature has too may unique values, we will add too many new columns (features/predictors) with a few non-zero values. **To store new array efficiently**, knowing **sparse matrices** is needed. 
+
+		+ Going with sparse matrices makes sense if number of non-zero values is far less than half of all the values. These matrices are useful when they work with categorical features or text data. Most of libraries can work with these sparse matrices directly include XGBoost, LightGBM, sklearn, and others. 
+
+		+ After figuring out how to preprocess categorical features for tree based and non-tree based models, we can look into feature generation.
+
+			Pclass		sex 		Pclass_sex
+			3			male 			3male
+			1 			female 			1female
+			3 			female 			3female
+			1 			female 			1female
+
+		Pclass_sex
+		1male 	1female 	2male 	2female 	3male 	3female
+													1
+				1
+														1
+				1
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+# Datetime and coordinates
+
+
+
+---
+
+# Handling missing values
+
+
+
+
 
