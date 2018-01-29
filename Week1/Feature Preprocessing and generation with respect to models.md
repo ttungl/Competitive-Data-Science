@@ -264,31 +264,83 @@ Creating new features using knowledge about the features and the tasks. It helps
 				1
 
 
-		
+		+ One of the most useful feature generation is **feature interaction** (see Pclass_sex) between several categorical features. This is useful for non-tree based models, such as, linear model, kNN. For example, let's hypothesize that target depends on pclass and sex features, if true, linear model could adjust its predictions for every possible combination of these two features to get a better result. Adding both features by concatenating strings from both columns and one-hot encoding. Now, linear model can find optimal coefficient for every interaction and improve the performance. It's simple and effective.
 
+## Summary of Categorical Features
 
+1. Values in ordinal features are sorted in some meaningful order.
 
+2. Label encodingn maps categories to numbers.
 
+3. Frequency encoding maps categories to their frequencies.
 
+4. **Label and frequency encodings** are often used for tree-based models.
 
+5. One-hot encoding is often used for non-tree-based models.
 
-
-
-
-
-
-
-
-
-
-
-
+6. Interactions of categorical features can help linear models and kNN.
 
 
 ---
 
 # Datetime and coordinates
 
++ Based on these info, we can come up with new features for feature generation.
+
+## Datetime:
+
++ Datetime can be divided into two categories, the first one is **time moments in a period**, and the second one is **time passed since particular event**. 
+
+	+ **time moments in a period**: 
+
+		+ 1. **Periodically**: Day number in week, month, season, year; second, minute, hour.
+
+			+ For example, we are predicting the efficiency of medication, patients receive pills once every three days, so we can consider this as **a special time period**.
+
+	+ **time passed since particular event**: this can be either row-independent or row-dependent. In the first case, we can calculate time passed from one general moment for all data (see in 3.). 
+
+		+ All samples will become pairable between each other on one time scale. As the  **time since particular event**, the date will depend on the sample we are calculating this for. If we are predicting sales in a shop (i.e. Rossmann's store sales competition), we can add the number of days passed since the last holidays, weekends, or since the last sales campaign, or #days left to these events. After adding features, data frames could be like:
+
+			Date 	weekday 	daynumber_since2014 	is_holiday 	days_till_holidays 	sales
+
+
+
+		+ 2. **Time since**
+
+			+ Row-independent moment. For example: since 00:00:00 UTC, 1 January 1970;
+
+			+ Row-dependent important moment; number of days left until next holidays/time passed after last holiday.
+
+		+ 3. **Difference between dates**
+
+			+ datetime_feature_1 - datetime_feature_2.
+
+## Conclusion:
+
++ Datetime:
+	
+	+ Periodicity.
+
+	+ Time since row-independent/dependent event.
+
+	+ Difference between dates.
+
++ Coordinates:
+	
+	+ Interesting places from train/test data or additional data.
+
+	+ centers of clusters.
+
+	+ Aggregated statistics.
+
+
+
+
+
+
+
+
+	
 
 
 ---
